@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import { QuoteDialog } from "@/components/quote-dialog";
 import { copy, languages, type Language } from "@/lib/website-copy";
 import warehouse from "@/assets/fulfillment-warehouse.jpg";
+import heroBanner from "@/assets/hero-banner.jpg";
 import logo from "@/assets/vela-symbol-complete.jpg.asset.json";
 import sourcingIcon from "@/assets/service-sourcing.png.asset.json";
 import qualityIcon from "@/assets/service-quality.png.asset.json";
