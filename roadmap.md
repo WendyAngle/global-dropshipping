@@ -4,4 +4,4 @@
 - [x] Save the design proposal as a document.
 - [x] Verify website and tests.
 - [x] Replace warehouse photo people with Chinese faces.
-- [ ] Add "Contact Us" to the header navigation in all four languages, then verify.
+- [x] Add "Contact Us" to the header navigation in all four languages, then verify.
