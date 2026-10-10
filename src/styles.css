@@ -288,6 +288,9 @@ h2 { font-size:36px; font-weight:800; line-height:1.35; margin-top:11px; }
 .faq-question { width:100%; justify-content:space-between; padding:20px 0; border-radius:0; height:auto; white-space:normal; text-align:left; font-size:13px; line-height:1.6; }
 .faq-question svg { transition:transform .2s; }
 .faq-item>p { font-size:12px; color:var(--muted-foreground); line-height:1.9; padding:0 25px 20px 0; }
+.faq-talk { justify-content:flex-start; gap:9px; padding:0; margin-top:20px; font-size:12px; color:var(--foreground); }
+.faq-talk svg { width:16px; transition:transform .2s; }
+.faq-talk:hover svg { transform:translate(2px,-2px); }
 .contact-section { border-top:1px solid var(--border); }
 .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
 .contact-text { font-size:13px; color:var(--muted-foreground); line-height:1.8; margin-top:15px; max-width:430px; }
