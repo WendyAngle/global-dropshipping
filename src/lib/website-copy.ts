@@ -1,4 +1,5 @@
-export const languages = { en: "English", fr: "Français", de: "Deutsch", zh: "中文" };
+export const languages = { en: "English", fr: "Français", de: "Deutsch", zh: "简体中文" };
+export const languageFlags = { en: "GB", fr: "FR", de: "DE", zh: "CN" };
 export type Language = keyof typeof languages;
 export const copy = {
   en: {
