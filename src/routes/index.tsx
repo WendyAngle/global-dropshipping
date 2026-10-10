@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const sectionIds = ["services", "process", "why-vela", "faq"];
+const sectionIds = ["services", "process", "why-vela", "faq", "contact"];
 const registerUrl = "https://velafulfill.dropshippingerp.com";
 const serviceIcons = [sourcingIcon, qualityIcon, packingIcon, shippingIcon];
 const benefitIcons = [Layers3, UsersRound, Sprout];
