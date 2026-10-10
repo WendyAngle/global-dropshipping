@@ -276,13 +276,18 @@ h2 { font-size:36px; font-weight:800; line-height:1.35; margin-top:11px; }
 .contact-card small { font-size:10px; font-weight:700; letter-spacing:.06em; color:var(--muted-foreground); }
 .contact-card p { font-family:'Manrope',sans-serif; font-size:16px; font-weight:700; margin-top:4px; }
 .contact-card>svg { margin-left:auto; color:var(--primary); flex-shrink:0; }
+.contact-note { display:flex; align-items:center; gap:8px; margin-top:22px; font-size:12px; color:var(--muted-foreground); }
+.contact-note svg { color:var(--primary); flex-shrink:0; }
 .cta-section { background:var(--primary); color:var(--primary-foreground); padding-block:57px; }
 .cta-section>.content-width { display:flex; align-items:center; justify-content:space-between; gap:30px; }
 .cta-section .eyebrow { color:var(--primary-foreground); opacity:.7; }
 .cta-section h2 { font-size:34px; }
 .cta-section p:not(.eyebrow) { opacity:.8; font-size:13px; margin-top:11px; }
 .cta-section button, .cta-section a { background:var(--background); color:var(--primary); font-size:13px; box-shadow:none; }
-.footer-top { padding:53px 0 36px; display:grid; grid-template-columns:2fr 1fr 1fr; gap:60px; }
+.footer-top { padding:53px 0 36px; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; }
+.footer-contact-link { font-size:12px; color:var(--muted-foreground); margin-top:10px; display:flex; align-items:center; gap:8px; transition:color .2s; }
+.footer-contact-link:hover { color:var(--primary); }
+.footer-contact-link svg { color:var(--primary); flex-shrink:0; }
 .footer-description { font-size:12px; color:var(--muted-foreground); max-width:250px; line-height:1.8; margin-top:20px; }
 .footer-top h4 { font-size:13px; font-weight:800; margin-bottom:14px; }
 .footer-top>div>a:not(.brand) { font-size:12px; color:var(--muted-foreground); margin-top:10px; display:flex; align-items:center; gap:6px; }
