@@ -236,6 +236,28 @@ h2 { font-size:36px; font-weight:800; line-height:1.35; margin-top:11px; }
 .service-card p { font-size:12px; line-height:1.9; color:var(--muted-foreground); min-height:91px; margin-top:4px; }
 .service-link { justify-content:space-between; width:100%; font-size:11px; padding:0; margin-top:13px; color:var(--foreground); }
 .service-link svg { width:15px; }
+.dtc-section { background:var(--secondary); border-top:1px solid var(--border); }
+.dtc-heading { max-width:760px; margin-bottom:38px; }
+.dtc-heading h2 { overflow-wrap:anywhere; }
+.dtc-intro { font-size:16px; color:var(--muted-foreground); line-height:1.8; margin-top:13px; }
+.dtc-grid { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:64px; align-items:start; }
+.dtc-label { font-size:11px; font-weight:700; color:var(--muted-foreground); margin-bottom:8px; }
+.dtc-challenge { display:flex; gap:18px; padding:27px 0; border-bottom:1px solid var(--border); }
+.dtc-challenge-icon { width:43px; height:43px; display:grid; place-items:center; flex-shrink:0; color:var(--primary); background:var(--background); border-radius:5px; }
+.dtc-challenge h3 { font-size:17px; line-height:1.5; font-weight:800; }
+.dtc-challenge p { font-size:13px; line-height:1.9; color:var(--muted-foreground); margin-top:9px; }
+.dtc-image { width:100%; aspect-ratio:16 / 7; object-fit:cover; border-radius:6px; }
+.dtc-solution>h3 { font-size:24px; font-weight:800; line-height:1.45; margin-top:22px; }
+.dtc-solution-text { font-size:13px; line-height:1.9; color:var(--muted-foreground); margin-top:11px; }
+.dtc-points { display:grid; gap:12px; margin-top:20px; }
+.dtc-points li { display:flex; align-items:flex-start; gap:10px; font-size:12px; line-height:1.8; }
+.dtc-points svg { color:var(--primary); flex-shrink:0; margin-top:3px; }
+.dtc-points strong { font-weight:700; }
+.dtc-points span { display:block; color:var(--muted-foreground); }
+.dtc-actions { display:flex; align-items:center; flex-wrap:wrap; gap:9px 13px; margin-top:25px; }
+.dtc-actions a { font-size:12px; white-space:normal; height:auto; min-height:42px; text-align:left; }
+@media(max-width:850px) { .dtc-grid { grid-template-columns:1fr; gap:32px; } .dtc-heading { margin-bottom:26px; } .dtc-image { aspect-ratio:16 / 8; } }
+@media(max-width:600px) { .dtc-intro { font-size:14px; } .dtc-challenge { gap:13px; padding-block:21px; } .dtc-challenge h3 { font-size:16px; } .dtc-challenge p { font-size:12px; } .dtc-solution>h3 { font-size:22px; } .dtc-actions { align-items:flex-start; flex-direction:column; } .dtc-actions a { max-width:100%; } }
 .process-section { background:var(--muted); border-block:1px solid var(--border); }
 .center-heading { text-align:center; }
 .center-heading .eyebrow { justify-content:center; }

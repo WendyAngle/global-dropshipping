@@ -13,3 +13,4 @@
 - Keep localized website copy in a typed shared dictionary so all visitor-facing sections switch together.
 - Store quote inquiries through a validated public server function; never expose inquiry reads to visitors.
 - Keep the marketing website as a single-page experience with section navigation and a shared quote dialog to minimize conversion friction.
+- Keep the DTC service detail in a dedicated presentation component within the services journey, using the shared localized dictionary and existing registration/contact destinations to avoid duplicate flows.
