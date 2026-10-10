@@ -1,12 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight, Box, Check, ChevronDown, Globe2, Menu, PackageCheck, ScanSearch, ShoppingBag, Truck, X, Layers3, UsersRound, Sprout, Plus } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, Globe2, Menu, PackageCheck, ShoppingBag, X, Layers3, UsersRound, Sprout, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { QuoteDialog } from "@/components/quote-dialog";
 import { copy, languages, type Language } from "@/lib/website-copy";
 import warehouse from "@/assets/fulfillment-warehouse.jpg";
 import logo from "@/assets/vela-symbol-complete.jpg.asset.json";
+import sourcingIcon from "@/assets/service-sourcing.png.asset.json";
+import qualityIcon from "@/assets/service-quality.png.asset.json";
+import packingIcon from "@/assets/service-packing.png.asset.json";
+import shippingIcon from "@/assets/service-shipping.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -21,7 +25,7 @@ export const Route = createFileRoute("/")({
 });
 
 const sectionIds = ["services", "process", "why-vela", "faq"];
-const serviceIcons = [ShoppingBag, ScanSearch, Box, Truck];
+const serviceIcons = [sourcingIcon, qualityIcon, packingIcon, shippingIcon];
 const benefitIcons = [Layers3, UsersRound, Sprout];
 
 function Index() {
@@ -42,7 +46,7 @@ function Index() {
     <main>
       <section className="hero"><img className="hero-photo" src={warehouse} alt="An organized fulfillment warehouse with a team inspecting and packing orders" width={1920} height={1024}/><div className="hero-wash"/><div className="hero-content content-width"><p className="eyebrow"><span className="small-line"/>{t.eyebrow}</p><h1>Dropshipping.<br/><span>{t.headline}</span></h1><p className="hero-intro">{t.intro}</p><div className="hero-buttons"><Button onClick={openQuote} className="h-12 px-6">{t.quote}<ArrowUpRight/></Button><Button variant="outline" asChild className="h-12 px-5"><a href="#services">{t.explore}<ArrowRight/></a></Button></div><div className="hero-tags">{t.heroTags.map(tag => <span key={tag}><Check size={14}/>{tag}</span>)}</div></div><div className="photo-caption"><span className="caption-icon"><PackageCheck size={22}/></span><div><small>{t.photoLabel}</small><p>{t.photoSub}</p></div></div><span className="hero-index">01 / VELA TEAM</span></section>
       <section className="platform-strip content-width"><div><span className="eyebrow">{t.platforms}</span><p>{t.platformNote}</p></div><div className="platform-logos"><span className="shopify"><ShoppingBag/>shopify</span><span className="woo">Woo<span>Commerce</span></span><span className="tiktok">♪ <span>TikTok Shop</span></span><span className="amazon">amazon<span className="amazon-arrow">⌣</span></span></div></section>
-      <section id="services" className="section services-section content-width"><div className="section-top"><div><p className="eyebrow">{t.servicesEye}</p><h2>{t.servicesTitle}</h2></div><p className="section-description">{t.servicesIntro}</p></div><div className="service-grid">{t.services.map((service,i) => { const Icon=serviceIcons[i] ?? ShoppingBag; return <article className="service-card" key={service}><div className="service-card-top"><span className={`service-icon service-tone-${i}`}><Icon size={26}/></span><span className="service-number">0{i+1}</span></div><h3>{service}</h3><p>{t.descriptions[i]}</p><Button variant="link" onClick={openQuote} className="service-link">{t.details}<ArrowUpRight/></Button></article>; })}</div></section>
+      <section id="services" className="section services-section content-width"><div className="section-top"><div><p className="eyebrow">{t.servicesEye}</p><h2>{t.servicesTitle}</h2></div><p className="section-description">{t.servicesIntro}</p></div><div className="service-grid">{t.services.map((service,i) => { const icon=serviceIcons[i] ?? sourcingIcon; return <article className="service-card" key={service}><div className="service-card-top"><img className="service-reference-icon" src={icon.url} alt="" width={158} height={146} loading="lazy"/><span className="service-number">0{i+1}</span></div><h3>{service}</h3><p>{t.descriptions[i]}</p><Button variant="link" onClick={openQuote} className="service-link">{t.details}<ArrowUpRight/></Button></article>; })}</div></section>
       <section id="process" className="process-section section"><div className="content-width"><div className="center-heading"><p className="eyebrow">{t.processEye}</p><h2>{t.processTitle}</h2></div><div className="process-grid">{t.steps.map((step,i) => <div className="process-step" key={step}><div className="step-top"><span>0{i+1}</span>{i<3 && <ArrowRight size={20}/>}</div><h3>{step}</h3><p>{t.stepText[i]}</p></div>)}</div></div></section>
       <section id="why-vela" className="why-section section content-width"><div className="why-visual"><img src={warehouse} alt="VELA TEAM fulfillment concept: inspecting products before shipping" width={1920} height={1024} loading="lazy"/><div className="why-caption"><span>{t.aboutTag}</span><h3>{t.aboutSub}</h3><ArrowUpRight size={28}/></div></div><div className="why-content"><p className="eyebrow">{t.whyEye}</p><h2 className="whitespace-pre-line">{t.whyTitle}</h2><p className="why-intro">{t.whyIntro}</p><div className="benefit-list">{t.benefits.map((benefit,i) => { const Icon=benefitIcons[i] ?? Layers3; return <div key={benefit}><span><Icon size={21}/></span><div><h3>{benefit}</h3><p>{t.benefitText[i]}</p></div></div>; })}</div></div></section>
       <section id="faq" className="faq-section section"><div className="content-width faq-grid"><div><p className="eyebrow">{t.faqEye}</p><h2>{t.faqTitle}</h2><Button variant="link" className="px-0 mt-5" onClick={openQuote}>{t.details}<ArrowUpRight/></Button></div><div className="faq-list">{t.questions.map((question,i) => <div className="faq-item" key={question}><Button variant="ghost" onClick={() => setFaqOpen(faqOpen===i ? null : i)} aria-expanded={faqOpen===i} aria-controls={`faq-answer-${i}`} className="faq-question">{question}<Plus className={faqOpen===i ? "rotate-45" : ""}/></Button>{faqOpen===i && <p id={`faq-answer-${i}`}>{t.answers[i]}</p>}</div>)}</div></div></section>
