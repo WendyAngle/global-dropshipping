@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import { QuoteDialog } from "@/components/quote-dialog";
 import { copy, languages, type Language } from "@/lib/website-copy";
 import warehouse from "@/assets/fulfillment-warehouse.jpg";
-import logo from "@/assets/vela-symbol.jpg.asset.json";
+import logo from "@/assets/vela-symbol-complete.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
