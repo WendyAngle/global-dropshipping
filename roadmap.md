@@ -5,5 +5,5 @@
 - [x] Verify website and tests.
 - [x] Replace warehouse photo people with Chinese faces.
 - [x] Add "Contact Us" to the header navigation in all four languages, then verify.
-- [ ] Integrate the approved DTC section with four-language copy and a new fulfillment image.
-- [ ] Verify DTC navigation, registration and contact links, and desktop/mobile presentation.
+- [x] Integrate the approved DTC section with four-language copy and a new fulfillment image.
+- [x] Verify DTC navigation, registration and contact links, and desktop/mobile presentation.
