@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight, Check, ChevronDown, Globe2, Menu, ShoppingBag, X, Layers3, UsersRound, Sprout, Plus } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, Menu, ShoppingBag, X, Layers3, UsersRound, Sprout, Plus } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { QuoteDialog } from "@/components/quote-dialog";
-import { copy, languages, type Language } from "@/lib/website-copy";
+import { copy, languageFlags, languages, type Language } from "@/lib/website-copy";
 import warehouse from "@/assets/fulfillment-warehouse.jpg";
 import heroBanner from "@/assets/hero-banner-clean.jpg";
 import logo from "@/assets/vela-symbol-complete.jpg.asset.json";
@@ -42,7 +43,7 @@ function Index() {
     <header className="site-header"><div className="header-inner">
       <a href="#" className="brand" aria-label="VELA TEAM home"><img src={logo.url} alt="VELA TEAM — Sail further together" width={630} height={563} /><span className="brand-name">VELA<span>TEAM</span><small>SAIL FURTHER TOGETHER</small></span></a>
       <nav className="desktop-nav" aria-label="Main navigation">{t.nav.map((label, i) => <a key={sectionIds[i]} href={`#${sectionIds[i]}`}>{label}{i === 0 && <ChevronDown size={12} />}</a>)}</nav>
-      <div className="header-actions"><label className="language-picker"><Globe2 size={16}/><select aria-label="Language" value={language} onChange={e => setLanguage(e.target.value as Language)}>{Object.entries(languages).map(([value,label]) => <option value={value} key={value}>{label}</option>)}</select></label><a className="erp-link" href="https://velafullfill.dropshippingerp.com" target="_blank" rel="noopener noreferrer">{t.login}<ArrowUpRight size={14}/></a><Button onClick={openQuote} className="header-quote">{t.quote}<ArrowUpRight/></Button><Button variant="ghost" size="icon" className="mobile-toggle" aria-label={t.menu} onClick={() => setMobileOpen(!mobileOpen)}>{mobileOpen ? <X/> : <Menu/>}</Button></div>
+      <div className="header-actions"><DropdownMenu><DropdownMenuTrigger asChild><button type="button" className="language-picker" aria-label="Language">{language.toUpperCase()}<ChevronDown size={14}/></button></DropdownMenuTrigger><DropdownMenuContent align="end" className="language-menu">{Object.entries(languages).map(([value,label]) => <DropdownMenuItem key={value} className={value===language ? "is-active" : ""} onSelect={() => setLanguage(value as Language)}><span className="language-flag">{languageFlags[value as Language]}</span>{label}</DropdownMenuItem>)}</DropdownMenuContent></DropdownMenu><a className="erp-link" href="https://velafullfill.dropshippingerp.com" target="_blank" rel="noopener noreferrer">{t.login}<ArrowUpRight size={14}/></a><Button onClick={openQuote} className="header-quote">{t.quote}<ArrowUpRight/></Button><Button variant="ghost" size="icon" className="mobile-toggle" aria-label={t.menu} onClick={() => setMobileOpen(!mobileOpen)}>{mobileOpen ? <X/> : <Menu/>}</Button></div>
     </div>{mobileOpen && <nav className="mobile-nav">{t.nav.map((label,i) => <a key={label} href={`#${sectionIds[i]}`} onClick={() => setMobileOpen(false)}>{label}<ArrowUpRight size={16}/></a>)}<a href="https://velafullfill.dropshippingerp.com" target="_blank" rel="noopener noreferrer">{t.login}<ArrowUpRight size={16}/></a></nav>}</header>
     <main>
       <section className="hero"><img className="hero-photo" src={heroBanner} alt="A bright workspace with a laptop, a shipping box of products, an airplane and a globe" width={1920} height={1080}/><div className="hero-wash"/><div className="hero-content content-width"><p className="eyebrow"><span className="small-line"/>{t.eyebrow}</p><h1>Dropshipping.<br/><span>{t.headline}</span></h1><p className="hero-intro">{t.intro}</p><div className="hero-buttons"><Button onClick={openQuote} className="h-12 px-6">{t.quote}<ArrowUpRight/></Button><Button variant="outline" asChild className="h-12 px-5"><a href="#services">{t.explore}<ArrowRight/></a></Button></div><div className="hero-tags">{t.heroTags.map(tag => <span key={tag}><Check size={14}/>{tag}</span>)}</div></div><span className="hero-index">01 / VELA TEAM</span></section>
