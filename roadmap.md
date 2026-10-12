@@ -8,3 +8,4 @@
 - [x] Integrate the approved DTC section with four-language copy and a new fulfillment image.
 - [x] Verify DTC navigation, registration and contact links, and desktop/mobile presentation.
 - [x] Re-add the "Let's talk / 咨询服务" link to the FAQ section in all four languages, then verify.
+- [x] Relabel the FAQ link "Contact us" and make it jump to the Contact us section in all four languages, then verify.
