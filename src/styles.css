@@ -318,13 +318,6 @@ h2 { font-size:36px; font-weight:800; line-height:1.35; margin-top:11px; }
 .footer-top>div>a:not(.brand) { font-size:12px; color:var(--muted-foreground); margin-top:10px; display:flex; align-items:center; gap:6px; }
 .footer-top button { display:flex; font-size:12px; }
 .footer-bottom { border-top:1px solid var(--border); padding-block:22px; display:flex; justify-content:space-between; gap:20px; font-size:10px; color:var(--muted-foreground); }
-.quote-dialog { max-height:90dvh; overflow-y:auto; border-radius:6px; width:calc(100% - 32px); padding:30px; }
-.quote-form { display:grid; gap:15px; margin-top:4px; }
-.quote-form label { display:grid; gap:7px; font-size:13px; font-weight:600; }
-.quote-form input:not([type=checkbox]),.quote-form textarea { width:100%; border:1px solid var(--input); background:var(--background); border-radius:4px; padding:10px 12px; font-size:14px; font-weight:400; outline:none; }
-.quote-form input:focus,.quote-form textarea:focus { border-color:var(--primary); }
-.quote-form .consent { display:flex; gap:10px; align-items:flex-start; font-size:11px; color:var(--muted-foreground); font-weight:400; line-height:1.7; }
-.consent input { margin-top:3px; accent-color:var(--primary); }
 .mobile-nav { display:grid; padding:15px 24px; gap:15px; border-top:1px solid var(--border); }
 .mobile-nav a { display:flex; justify-content:space-between; font-size:15px; }
 @media(min-width:1500px) { .hero { min-height:665px; } .hero-content { padding-top:103px; } }
