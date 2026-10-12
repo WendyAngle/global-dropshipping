@@ -5,7 +5,6 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { DtcSection } from "@/components/dtc-section";
-import { QuoteDialog } from "@/components/quote-dialog";
 import { copy, languageFlags, languages, type Language } from "@/lib/website-copy";
 import warehouse from "@/assets/fulfillment-warehouse.jpg";
 import heroBanner from "@/assets/hero-banner-clean.jpg";
@@ -34,13 +33,11 @@ const benefitIcons = [Layers3, UsersRound, Sprout];
 
 function Index() {
   const [language, setLanguage] = useState<Language>("en");
-  const [quoteOpen, setQuoteOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
   const t = copy[language];
   useEffect(() => { document.documentElement.lang = language; }, [language]);
-  const openQuote = () => setQuoteOpen(true);
   return <div className="site-shell">
     <header className="site-header"><div className="header-inner">
       <a href="#" className="brand" aria-label="VELA TEAM home"><img src={logo.url} alt="VELA TEAM — Sail further together" width={630} height={563} /><span className="brand-name">VELA<span>TEAM</span><small>SAIL FURTHER TOGETHER</small></span></a>
@@ -59,6 +56,6 @@ function Index() {
       <section className="cta-section"><div className="content-width"><div><p className="eyebrow">{t.ctaEye}</p><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div><Button asChild variant="secondary" className="h-13 px-7"><a href={registerUrl} target="_blank" rel="noopener noreferrer">{t.quote}<ArrowUpRight/></a></Button></div></section>
     </main>
     <footer className="site-footer content-width"><div className="footer-top"><div><a href="#" className="brand footer-brand"><img src={logo.url} alt="VELA TEAM" width={630} height={563}/><span className="brand-name">VELA<span>TEAM</span><small>SAIL FURTHER TOGETHER</small></span></a><p className="footer-description">{t.footerText}</p></div><div><h4>{t.footerServices}</h4>{t.services.map(service => <a href="#services" key={service}>{service}</a>)}</div><div><h4>{t.footerQuick}</h4><a href={registerUrl} target="_blank" rel="noopener noreferrer">{t.quote}<ArrowUpRight size={14}/></a><a href="https://velafulfill.dropshippingerp.com" target="_blank" rel="noopener noreferrer">{t.login}<ArrowUpRight size={14}/></a><Button variant="link" className="px-0 text-muted-foreground" onClick={() => setPrivacyOpen(true)}>{t.privacy}</Button></div><div><h4>{t.footerContact}</h4><a className="footer-contact-link" href="mailto:yingyue.mi@boohigh.com"><Mail size={15}/>yingyue.mi@boohigh.com</a><a className="footer-contact-link" href="https://wa.me/8618280076669" target="_blank" rel="noopener noreferrer"><MessageCircle size={15}/>+86 18280076669</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} VELA TEAM. {t.footerRights}</span><span>Dropshipping <span className="text-primary">/</span> Sail further together.</span></div></footer>
-    <QuoteDialog open={quoteOpen} onOpenChange={setQuoteOpen} language={language}/><Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}><DialogContent><DialogTitle>{t.privacy}</DialogTitle><DialogDescription className="leading-relaxed">{t.privacyText}</DialogDescription><Button onClick={() => setPrivacyOpen(false)}>{t.privacyClose}</Button></DialogContent></Dialog>
+    <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}><DialogContent><DialogTitle>{t.privacy}</DialogTitle><DialogDescription className="leading-relaxed">{t.privacyText}</DialogDescription><Button onClick={() => setPrivacyOpen(false)}>{t.privacyClose}</Button></DialogContent></Dialog>
   </div>;
 }
