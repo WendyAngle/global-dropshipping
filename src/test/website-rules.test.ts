@@ -13,4 +13,9 @@ describe("Website requirements", () => {
     expect(quoteSchema.safeParse({ name: "Test", email: "invalid", store_url: "", message: "Inquiry", language: "en" }).success).toBe(false);
     expect(quoteSchema.safeParse({ name: "Test", email: "test@example.com", store_url: "", message: "Inquiry", language: "es" }).success).toBe(false);
   });
+  it("uses the navigation contact wording for the FAQ contact link", () => {
+    for (const language of Object.keys(copy) as (keyof typeof copy)[]) {
+      expect(copy[language].contactLink).toBe(copy[language].nav.at(-1));
+    }
+  });
 });
